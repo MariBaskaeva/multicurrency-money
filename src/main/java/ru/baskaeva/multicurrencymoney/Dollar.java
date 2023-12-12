@@ -14,4 +14,10 @@ public class Dollar {
     public int getAmount() {
         return amount;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        Dollar dollar = (Dollar) o;
+        return amount == dollar.amount;
+    }
 }
