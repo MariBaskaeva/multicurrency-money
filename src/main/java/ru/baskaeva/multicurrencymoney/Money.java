@@ -1,6 +1,6 @@
 package ru.baskaeva.multicurrencymoney;
 
-class Money {
+class Money implements Expression {
     protected int amount;
     protected String currency;
 
@@ -19,6 +19,14 @@ class Money {
 
     static Money dollar(int amount) {
         return new Money(amount, "USD");
+    }
+
+    Expression plus(Money addend) {
+        return new Sum(this, addend);
+    }
+
+    public Money reduce(String to) {
+        return this;
     }
 
     Money times(int multiplier) {
