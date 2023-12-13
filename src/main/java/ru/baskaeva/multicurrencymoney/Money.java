@@ -13,12 +13,12 @@ class Money {
         return currency;
     }
 
-    static Money dollar(int amount) {
-        return new Dollar(amount, "USD");
+    static Money franc(int amount) {
+        return new Money(amount, "CHF");
     }
 
-    static Money franc(int amount) {
-        return new Franc(amount, "CHF");
+    static Money dollar(int amount) {
+        return new Money(amount, "USD");
     }
 
     Money times(int multiplier) {
